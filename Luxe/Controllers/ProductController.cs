@@ -1,4 +1,5 @@
 ﻿using Luxe.Repositories;
+using Luxe.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Luxe.Controllers
@@ -16,7 +17,10 @@ namespace Luxe.Controllers
 
         public IActionResult List()
         {
-            return View(_productRepository.AllProducts);
+            //ViewBag.CurrentCategory = "All Product Category";
+            //return View(_productRepository.AllProducts);
+            ProductListViewModel productListViewModel = new ProductListViewModel(_productRepository.AllProducts, "All Product Category");
+            return View(productListViewModel);  
         }
     }
 }
