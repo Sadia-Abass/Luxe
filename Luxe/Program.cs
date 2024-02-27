@@ -1,4 +1,9 @@
+using Luxe.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+builder.Services.AddScoped<IProductRepository, MockProductRepository>();
 
 builder.Services.AddControllersWithViews();
 
