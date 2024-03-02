@@ -12,7 +12,25 @@
 </head>
 <body>
     <div class="container">
-        @RenderBody()
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary" aria-label="Luxe navigation header">
+                <div class="container-xl">
+                    <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                        <img src="~/Images/" width="151" height="47" class="d-inline-block align-top mb-2 mt-1" alt="Luxe's Logo"/>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <main>
+            @RenderBody()
+        </main>
+       <footer>
+
+       </footer>
     </div>
+    
 </body>
 </html>
