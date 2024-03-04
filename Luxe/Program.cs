@@ -1,11 +1,17 @@
+using Luxe.Models;
 using Luxe.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-builder.Services.AddScoped<IProductRepository, MockProductRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<LuxeDbContext>( options =>
+{
+    options.UseSqlServer(builder.Configuration["ConnectionStrings:LuxeConnectionString"]);
+});
 
 var app = builder.Build();
 
@@ -19,6 +25,6 @@ if (app.Environment.IsDevelopment())
 
 app.MapDefaultControllerRoute();
 
-
+DbIntializer.Seed(app);
 
 app.Run();
