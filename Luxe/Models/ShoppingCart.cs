@@ -18,6 +18,7 @@ namespace Luxe.Models
             ISession? session = serviceProvider.GetRequiredService<IHttpContextAccessor>()?.HttpContext?.Session;
             LuxeDbContext context = serviceProvider.GetService<LuxeDbContext>() ?? throw new Exception("Error initializing");
             string cartId = session?.GetString("CartId") ?? Guid.NewGuid().ToString();
+            session?.SetString("CartId", cartId);
             return new ShoppingCart(context)
             {
                 ShoppingCartId = cartId,
@@ -93,9 +94,9 @@ namespace Luxe.Models
             return total;
         }
 
-        List<ShoppingCartItem> IShoppingCart.ShoppingCartItems()
-        {
-            throw new NotImplementedException();
-        }
+        //List<ShoppingCartItem> IShoppingCart.ShoppingCartItems()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

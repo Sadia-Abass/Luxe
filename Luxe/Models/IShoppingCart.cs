@@ -7,6 +7,6 @@
         List<ShoppingCartItem> GetShoppingCartItems();
         void ClearCart();
         decimal GetShoppingCartTotal();
-        List<ShoppingCartItem> ShoppingCartItems();
+        List<ShoppingCartItem> ShoppingCartItems { get; set; }
     }
 }

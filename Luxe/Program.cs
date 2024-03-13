@@ -19,14 +19,15 @@ builder.Services.AddDbContext<LuxeDbContext>( options =>
 
 var app = builder.Build();
 
-app.UseStaticFiles();
-app.UseSession();
+
 
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
 
+app.UseStaticFiles();
+app.UseSession();
 //app.MapDefaultControllerRoute();
 
 app.MapControllerRoute(
