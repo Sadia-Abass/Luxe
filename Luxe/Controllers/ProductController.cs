@@ -1,4 +1,5 @@
-﻿using Luxe.Repositories;
+﻿using Luxe.Models;
+using Luxe.Repositories;
 using Luxe.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,12 +16,31 @@ namespace Luxe.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public IActionResult List()
+        //public IActionResult List()
+        //{
+        //    //ViewBag.CurrentCategory = "All Product Category";
+        //    //return View(_productRepository.AllProducts);
+        //    ProductListViewModel productListViewModel = new ProductListViewModel(_productRepository.AllProducts, "All Product Category");
+        //    return View(productListViewModel);  
+        //}
+
+        public ViewResult List(string category)
         {
-            //ViewBag.CurrentCategory = "All Product Category";
-            //return View(_productRepository.AllProducts);
-            ProductListViewModel productListViewModel = new ProductListViewModel(_productRepository.AllProducts, "All Product Category");
-            return View(productListViewModel);  
+            IEnumerable<Product> products;
+            string? currentCategory;
+
+            if(string.IsNullOrEmpty(category))
+            {
+                products = _productRepository.AllProducts.OrderBy(p => p.Id);
+                currentCategory = "All products";
+            }
+            else
+            {
+                products = _productRepository.AllProducts.Where(p => p.Category.Name == category).OrderBy(p => p.Id);
+                currentCategory = _categoryRepository.AllCategories.FirstOrDefault(c => c.Name == category)?.Name;
+            }
+
+            return View(new ProductListViewModel(products, currentCategory));
         }
 
         public IActionResult Details(int id) 
