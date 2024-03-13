@@ -35,22 +35,7 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @foreach(var item in Model.PopularProduct)
             {
-                <div class="col">
-                    <div class="card product-card">
-                        <img src="@item.ImageThumbnailUrl" class="card-img-top" alt="@item.Name"/>
-                        <div class="card-body product-button">
-                            <h4 class="d-grid"></h4>
-                            <div class="d-flex justify-content-between mt-1">
-                                <h2 class="text-start">
-                                    <a asp-controller="Product" asp-action="Details" asp-route-id="@item.Id" class="product-link">
-                                        @item.Name
-                                    </a>
-                                </h2>
-                                <h5 class="text-nonwrap">@item.Price.ToString("c")</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <partial name="_ProductCard" model="item" />
             }
         </div>
     </div>

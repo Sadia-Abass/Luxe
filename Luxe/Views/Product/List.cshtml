@@ -8,7 +8,8 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
     @foreach(var item in Model.Products)
     {
-        <div class="col">
+        <partial name="_ProductCard" model="item" />
+        @* <div class="col">
             <div class="card product-card">
                 <img src="@item.ImageThumbnailUrl" class="card-img-top" alt="@item.Name"/>
                 <div class="card-body product-button">
@@ -21,7 +22,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> *@
     }
 
 </div>
