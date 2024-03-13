@@ -7,6 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
+builder.Services.AddScoped<IShoppingCart, ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+builder.Services.AddSession();
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<LuxeDbContext>( options =>
 {
@@ -16,7 +20,7 @@ builder.Services.AddDbContext<LuxeDbContext>( options =>
 var app = builder.Build();
 
 app.UseStaticFiles();
-
+app.UseSession();
 
 if (app.Environment.IsDevelopment())
 {
