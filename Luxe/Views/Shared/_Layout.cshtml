@@ -16,11 +16,21 @@
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary" aria-label="Luxe navigation header">
                 <div class="container-xl">
                     <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                        <img src="~/Images/" width="151" height="47" class="d-inline-block align-top mb-2 mt-1" alt="Luxe's Logo"/>
+                        <img src="~/Images/LuxeLogo.png" width="80" height="50" class="d-inline-block align-top mb-1 mt-1" alt="Luxe's Logo"/>
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-controller="Product" asp-action="List" class="nav-link">Product</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </header>

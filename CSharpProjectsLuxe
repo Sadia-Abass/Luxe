@@ -1,0 +1,35 @@
+[33mcommit 1dab104692e7ee93cd24194f1cb93b983781fdc0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Sadia Abass <104012271+Sadia-Abass@users.noreply.github.com>
+Date:   Mon Mar 4 11:57:18 2024 +0000
+
+    Add database using ef core and seed the database with data.
+
+[33mcommit 9e096d231c6db31ec44da04b1a6e74e4d42d93c5[m
+Author: Sadia Abass <104012271+Sadia-Abass@users.noreply.github.com>
+Date:   Sat Mar 2 12:48:02 2024 +0000
+
+    Add navigation and css styling rules for the navbar and product list page.
+
+[33mcommit 2fbee2bd909a4def2cbba3aa0b408f2724edc2c5[m
+Author: Sadia Abass <104012271+Sadia-Abass@users.noreply.github.com>
+Date:   Tue Feb 27 18:35:56 2024 +0000
+
+    Added view and viewModel for product and added bootstrap library.
+
+[33mcommit 3a38fe3d41d9acb05fc39ed4605f34b63a8b3c38[m
+Author: Sadia Abass <104012271+Sadia-Abass@users.noreply.github.com>
+Date:   Tue Feb 27 16:54:03 2024 +0000
+
+    Added products controller
+
+[33mcommit 3547ccf77ce538cca965c083e495f4ef86412d52[m
+Author: Sadia Abass <104012271+Sadia-Abass@users.noreply.github.com>
+Date:   Tue Feb 27 15:21:02 2024 +0000
+
+    Add classes, repositories and mock data for product and category.
+
+[33mcommit cc5b3c00f022c588c027e3f5f765167fbecf58ed[m
+Author: Sadia Abass <104012271+Sadia-Abass@users.noreply.github.com>
+Date:   Tue Feb 27 13:22:40 2024 +0000
+
+    Initial Commit
