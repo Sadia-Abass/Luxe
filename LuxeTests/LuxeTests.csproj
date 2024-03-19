@@ -26,8 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Mocks\" />
     <Folder Include="TagHelpers\" />
   </ItemGroup>
 
