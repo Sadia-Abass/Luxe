@@ -13,7 +13,7 @@ namespace Luxe.Controllers
             _productRepository = productRepository;
         }
 
-        public IActionResult Index()
+        public ViewResult Index()
         {
             var popularProduct = _productRepository.AllProducts;
             var homeViewModel = new HomeViewModel(popularProduct);
