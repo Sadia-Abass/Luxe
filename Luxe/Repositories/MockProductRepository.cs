@@ -51,5 +51,10 @@ namespace Luxe.Repositories
         {
             return AllProducts.FirstOrDefault(x => x.Id == id);
         }
+
+        public IEnumerable<Product> SearchProduct(string searchQuery)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,5 +6,6 @@ namespace Luxe.Repositories
     {
         IEnumerable<Product> AllProducts { get; }
         Product? GetProductById(int id);
+        IEnumerable<Product> SearchProduct(string searchQuery);
     }
 }

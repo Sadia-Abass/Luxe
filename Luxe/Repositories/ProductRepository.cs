@@ -24,5 +24,10 @@ namespace Luxe.Repositories
         {
             return _luxeDbcontext.Products.FirstOrDefault(p => p.Id == id);
         }
+
+        public IEnumerable<Product> SearchProduct(string searchQuery)
+        {
+            return _luxeDbcontext.Products.Where(p => p.Name.Contains(searchQuery));
+        }
     }
 }
