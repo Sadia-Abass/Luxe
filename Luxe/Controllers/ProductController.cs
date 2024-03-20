@@ -52,5 +52,10 @@ namespace Luxe.Controllers
             }
             return View(product);   
         }
+
+        public IActionResult Search()
+        {
+            return View();
+        }
     }
 }
